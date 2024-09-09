@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="/css/base_style.css" type="text/css">
+    <link rel="stylesheet" href="/css/header.css" type="text/css">
+    <link rel="stylesheet" href="/css/sell_product.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class="header_logo">Logo</div>
+        <div class="header_title">Site Name</div>
+        <div class="header_nav">
+            <nav>
+                <ul>
+                    <li><a href="/html/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div style="display: flex;">
+            <div style="width: 50%;">
+                <div class="image">
+                    <img style="width: 100%; height: auto;" src="/images/shirt-2650677_1280.jpg" alt="shirt">
+                    <img style="width: 100%; height: auto;" src="/images/asian-woman-7127159_1280.jpg" alt="shirt">
+                    <img style="width: 100%; height: auto;" src="/images/fashion-8012239_1280.jpg" alt="shirt">
+                </div>
+            </div>
+            <div style="position:fixed; top: 0; right: 0; width: 50%;">
+                <div class="productinfo" style="padding: 1rem 2rem;">
+                    <form action="order.jsp" method="post">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">
+                                        <h1>남성 셔츠</h1>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><label for="price">판매가</label></td>
+                                    <td>30,000원</td>
+                                </tr>
+                                <tr>
+                                    <td>쿠폰</td>
+                                    <td>첫 구매 쿠폰 30%</td>
+                                </tr>
+                                <tr>
+                                    <td>판매 등급</td>
+                                    <td>상</td>
+                                </tr>
+                                <tr>
+                                    <td>제품 상태</td>
+                                    <td>[중고] 사진 외의 특별한 오염이나 훼손이 없는 양호한 상태</td>
+                                </tr>
+                                <tr>
+                                    <td>최종 가격</td>
+                                    <td>21,000원</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input style="width: 100%;" type="button" value="장바구니"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input style="width: 100%;" type="button" value="바로구매"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

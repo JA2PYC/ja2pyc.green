@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Hover</title>
+    <style>
+        div {
+            color: #f0f0f0;
+            text-align: center;
+            text-shadow: 3px 3px 3px blue;
+            border: 1px solid red;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .container1 {
+            border: 0;
+        }
+
+        .container1 div:nth-child(1) {
+            background-color: green;
+        }
+
+        .container1 div:nth-child(2) {
+            background-color: violet;
+        }
+
+        .container1 div:nth-child(2):hover {
+            background-color: blueviolet;
+        }
+
+        .container1 div:nth-child(3) {
+            background-color: lime;
+        }
+
+        .container2 div:nth-child(odd) {
+            background-color: lightblue;
+        }
+
+        .container2 div:nth-child(even) {
+            background-color: lightgreen;
+        }
+
+        div:nth-child(4) {
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>CSS Hover</h1>
+    <hr>
+    <div class="container1">
+        <div class="div1">First</div>
+        <div class="div2">Second</div>
+        <div class="div3">Third</div>
+        <div class="div4">Fourth</div>
+    </div>
+    <div class="container2">
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+        <div>Fourth</div>
+    </div>
+    <div class="container3">
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+        <div>Fourth</div> 
+    </div>
+    <div class="container4">
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+        <div>Fourth</div>
+    </div>
+</body>
+
+</html>

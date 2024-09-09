@@ -1,0 +1,32 @@
+:root {
+    --main-color: #66a72d;
+}
+
+/* 전체 선택자 */
+* {
+    color: blue;
+}
+
+/* 태그 선택자 */
+a {
+    color: black;
+    border: none;
+}
+
+h1 {
+    color: red;
+}
+
+/* ID 선택자 */
+#html {
+    color: green;
+}
+
+/* Class 선택자 */
+.css {
+    color: indianred;
+}
+
+.javascript {
+    color: greenyellow;
+}

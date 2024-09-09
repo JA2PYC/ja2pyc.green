@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Input Output</title>
+    <script>
+        let el_hash = window.location.hash;
+        let el_host = window.location.host;
+        let el_hostname = window.location.hostname;
+        let el_href = window.location.href;
+        let el_pathname = window.location.pathname;
+        let el_port = window.location.port;
+        let el_origin = window.location.origin;
+
+        console.log(el_hash);
+        console.log(el_host);
+        console.log(el_hostname);
+        console.log(el_href);
+        console.log(el_pathname);
+        console.log(el_port);
+        console.log(el_origin);
+
+        let age;
+        function clickPrompt(event) {
+            let result = document.querySelector('.result');
+            let target = event.target;
+            age = parseInt(prompt('나이를 입력해 주세요.', '숫자만 입력 가능합니다.'));
+
+            if (result) {
+                result.setAttribute('value', age);
+            } else {
+                console.log(age);
+            }
+        }
+
+        function clickConfirm(event) {
+            let result = document.querySelector('.result');
+            let target = event.target;
+            if (age) {
+                let confirmResult = confirm(age + '살이 맞습니까?');
+                if (confirmResult === true) {
+                    result.setAttribute('value', '확인')
+                } else {
+                    result.setAttribute('value', '오류')
+                }
+
+            } else {
+                alert('나이가 설정되어 있지 않습니다.');
+            }
+        }
+
+        let calc_formula = '';
+        let calc_operator = '';
+        let calc_result = 0;
+
+        function calculator(event) {
+            let target = event.target;
+            let calc_input = target.getAttribute('calc_input');
+
+            let calc_history = document.querySelector('.calc_history');
+            let calc_answer = document.querySelector('.calc_answer');
+            console.log(calc_input);
+            switch (calc_input) {
+                case '0':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '1':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '2':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '3':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '4':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '5':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '6':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '7':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '8':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '9':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '.':
+                    calc_formula += calc_input
+                    calc_history.innerHTML += calc_input;
+                    break;
+                case '+':
+                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                    calc_history.innerHTML += ' + ';
+                    calc_operator = '+';
+                    calc_formula = '';
+                    break;
+                case '-':
+                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                    calc_history.innerHTML += ' - ';
+                    calc_operator = '-';
+                    calc_formula = '';
+                    break;
+                case '*':
+                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                    calc_history.innerHTML += ' * ';
+                    calc_operator = '*';
+                    calc_formula = '';
+                    break;
+                case '/':
+                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                    calc_history.innerHTML += ' / ';
+                    calc_operator = '/'
+                    calc_formula = '';
+                    break;
+                case '=':
+                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                    calc_history.innerHTML += ' = ' + calc_result;
+                    calc_operator = '=';
+                    calc_formula = '';
+                    break;
+                case 'C':
+                    calc_history.innerHTML = '';
+                    calc_operator = '';
+                    calc_formula = '';
+                    calc_result = '';
+                    break;
+            }
+
+            calc_answer.setAttribute('value', String(calc_result));
+        }
+
+        function calculateFormula(formula, operator, result) {
+            if (formula === '') return result;
+
+            if (operator === '') {
+                result = parseFloat(formula);
+            } else if (operator === '+') {
+                result += parseFloat(formula);
+            } else if (operator === '-') {
+                result -= parseFloat(formula);
+            } else if (operator === '*') {
+                result *= parseFloat(formula);
+            } else if (operator === '/') {
+                result /= parseFloat(formula);
+            } else if (operator === '=') {
+                result = result;
+            }
+
+            return result;
+        }
+
+        function practicePrompt(event) {
+            let target = event.target;
+            let practice_p = document.querySelector('.practice_p');
+
+            let practice_name = prompt('이름을 입력하세요');
+            if (practice_name) {
+                practice_p.innerHTML = '결과 : ' + practice_name + '님 안녕하세요!';
+            } else {
+                practice_p.innerHTML =  '입력된 이름이 없습니다.';
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JS Input Output</h1>
+    <hr>
+    <div class="container">
+        <div>
+            <input type="text" class="result" disabled />
+        </div>
+        <button type="button" class="prompt" onclick="clickPrompt(event)">prompt</button>
+        <button type="button" class="confirm" onclick="clickConfirm(event)">confirm</button>
+    </div>
+    <hr>
+    <div class="calculator">
+        <div>
+            <div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="4"><textarea name="" id="calc_history" class="calc_history" disabled></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="text" class="calc_answer" disabled /></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="7">7</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="8">8</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="9">9</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="+">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="4">4</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="5">5</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="6">6</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="-">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="1">1</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="2">2</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="3">3</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="*">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="0">0</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input=".">.</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="=">=</button></td>
+                    <td><button class="calc_input" onclick="calculator(event)" calc_input="/">/</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button class="calc_input" onclick="calculator(event)" calc_input="C">C</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="prompt">
+        <div class="practice">프롬프트 연습</div>
+        <hr>
+        <button type="button" class="practice_button" onclick="practicePrompt(event)">이름입력 버튼</button>
+        <p class="practice_p">결과가 출력됩니다.</p>
+    </div>
+</body>
+
+</html>

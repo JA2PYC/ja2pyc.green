@@ -1,0 +1,485 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+ :root {
+    --el-yt-color-youtube: #FF0000;
+    --el-yt-color-white: #FFFFFF;
+    --el-yt-color-almostblack: #282828;
+}
+
+/* Embed */
+.el-youtube-front .el-front-embed {
+    display: block;
+    margin: 1rem 0;
+}
+
+.el-youtube-front .el-embed-video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 56.25vh;
+    max-height: 90vh;
+    min-height: 480px;
+    overflow-x: clip;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+}
+
+.el-youtube-front .el-embed-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+.el-youtube-front .el-category-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
+
+.el-youtube-front .el-header-title {}
+
+.el-youtube-front .el-title-link {
+    display: flex;
+}
+
+.el-youtube-front .el-title-img {
+    width: auto;
+    height: 2rem;
+    margin: 0 0.5rem;
+}
+
+.el-youtube-front .el-title-name {
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    font-weight: 600;
+    color: #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: red;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.el-youtube-front .el-title-notice {
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+.el-youtube-front .el-header-button {
+    color: #f0f0f0;
+}
+
+.el-youtube-front .el-button-reset {
+    background-color: var(--el-yt-color-youtube);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.5rem;
+}
+
+/* PSHB Section */
+.el-youtube-front .el-category-section {
+    position: relative;
+}
+
+/* Grid Article */
+.el-youtube-front .el-section-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+/* List Article */
+.el-youtube-front .el-list-article {
+    position: relative;
+    grid-row: span 1;
+    background-color: #f0f0f0;
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Hide Article */
+.el-youtube-front .el-list-article.el-article-hidden {
+    display: none;
+}
+
+/* Animation */
+.el-youtube-front .el-list-article.el-article-expanded {
+    animation: elExpandAnimation 0.5s ease-in-out forwards;
+}
+
+.el-youtube-front .el-list-article.el-article-collapsed {
+    animation: elCollapseAnimation 0.5s ease-in-out forwards;
+}
+
+.el-youtube-front .el-article-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 250px;
+    font-size: 0.8rem;
+}
+
+.el-youtube-front .el-article-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 250px;
+    font-size: 0.8rem;
+}
+
+/* Article Thumbnail */
+.el-youtube-front .el-article-thumbnail {
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.el-youtube-front .el-thumbnail-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.el-youtube-front .el-thumbnail-live {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    background-color: red;
+    max-width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0.25rem 0.5rem;
+}
+
+/* Article Channel */
+.el-youtube-front .el-article-channel {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.8rem;
+    max-width: 100%;
+    margin: 0.5rem 0;
+}
+
+/* Channel Status */
+.el-youtube-front .el-channel-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.25rem 0 0;
+}
+
+.el-youtube-front .el-status-profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+}
+
+.el-youtube-front .el-profile-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.el-youtube-front .el-status-indicator {
+    background-color: red;
+    font-weight: 600;
+    color: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.el-youtube-front .el-status-language {
+    max-width: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #e8e8e8;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* Channel Card */
+.el-youtube-front .el-channel-card {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: clip;
+    line-height: 1.2rem;
+}
+
+.el-youtube-front .el-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 2.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.el-youtube-front .el-card-channelTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.el-youtube-front .el-card-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 2.4rem;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    text-overflow: ellipsis;
+}
+
+.el-youtube-front .el-card-tags {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.2rem;
+}
+
+.el-youtube-front .el-tags-label {
+    display: inline-block;
+    background-color: #e8e8e8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    max-width: 5rem;
+    padding: 2px 4px;
+    margin-right: 2px;
+}
+
+/* Section for Scroll Button */
+.el-youtube-front .el-section-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #f0f0f0;
+    height: 1px;
+    background-color: #d0d0d0;
+    margin: 2rem 0;
+}
+
+.el-youtube-front .el-button-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 2rem;
+    background-color: var(--el-yt-color-youtube);
+    border-radius: 8px;
+    margin: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.el-youtube-front .el-button-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 2rem;
+    background-color: var(--el-yt-color-youtube);
+    border-radius: 8px;
+    margin: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.el-youtube-front .el-button-scroll {
+    display: none;
+}
+
+.el-youtube-front .el-button-hidden {
+    display: none;
+}
+
+/* Animation for expanding */
+@keyframes elExpandAnimation {
+    from {
+        opacity: 0;
+        /* height: 0; */
+    }
+
+    to {
+        opacity: 1;
+        /* height: 100%; */
+    }
+}
+
+/* Animation for collapsing */
+@keyframes elCollapseAnimation {
+    from {
+        opacity: 1;
+        /* height: 100%; */
+    }
+
+    to {
+        opacity: 0;
+        /* height: 0; */
+    }
+}
+
+@media (hover:none) or (max-width: 768px) {
+
+    /* Embed Mobile */
+    .el-youtube-front .el-front-embed {
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        margin: 0 auto;
+    }
+
+    .el-youtube-front .el-embed-video {
+        position: relative;
+        height: 25vh;
+        max-height: 25vh;
+        min-height: 250px;
+        aspect-ratio: 16/9;
+        margin: 0 auto;
+    }
+
+    .el-youtube-front .el-embed-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Video List */
+    .el-youtube-front .el-section-list {
+        grid-auto-columns: 250px;
+        grid-auto-flow: column;
+        overflow: auto;
+        /* display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 100%; */
+    }
+
+    .el-youtube-front .el-list-article {
+        /* flex: 0 0 250px; */
+    }
+
+    .el-youtube-front .el-button-collapse {
+        display: none;
+    }
+    
+    .el-youtube-front .el-button-more {
+        display: none;
+    }
+
+    /* Section for Scroll Button */
+    .el-youtube-front .el-button-scroll {
+        display: flex;
+        opacity: 0.5;
+        transition: opacity 0.5s ease 0s;
+    }
+
+    .el-youtube-front .el-scroll-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+        justify-content: center;
+        width: 40px;
+        height: 100%;
+        border: none;
+        outline: 0px;
+        background-color: transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: visibility 0.5s ease 0s;
+    }
+
+    .el-youtube-front .el-left-svg {
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        color: #ddd;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: visibility 0.4s ease 0s, opacity 0.4s ease 0s, background-color 0.2s ease 0s, color 0.2s ease 0s;
+        pointer-events: none;
+    }
+
+    .el-youtube-front .el-scroll-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+        justify-content: center;
+        width: 40px;
+        height: 100%;
+        border: none;
+        outline: 0px;
+        background-color: transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: visibility 0.5s ease 0s;
+    }
+
+    .el-youtube-front .el-right-svg {
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        color: #ddd;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: visibility 0.4s ease 0s, opacity 0.4s ease 0s, background-color 0.2s ease 0s, color 0.2s ease 0s;
+        pointer-events: none;
+    }
+
+    .el-youtube-front .el-button-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}

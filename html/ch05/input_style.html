@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Input Style</title>
+    <style>
+        table {
+            width: 50%;
+            font-size: 15px;
+            margin: auto;
+        }
+
+        table tbody tr th {
+            text-align: left;
+            font-weight: 300;
+        }
+
+        table tbody input {
+            width: 100%;
+            border: none;
+            padding: 1rem 1rem;
+            margin: 1rem 0;
+            box-sizing: border-box;
+            /* Width 다른 문제 해결 */
+        }
+
+        table tbody input[type="text"],
+        input[type="password"] {
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            box-shadow: 6px 6px 6px #cccccc, -6px -6px 6px white;
+        }
+
+        table tbody input[type="submit"] {
+            color: #fefefe;
+            font-weight: 600;
+            background-color: royalblue;
+            border-radius: 20px;
+            box-shadow: 6px 6px 6px #cccccc, -6px -6px 6px white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Input Style</h1>
+    <hr>
+    <form action="login.jsp">
+        <table>
+            <thead>
+                <tr>
+                    <th>로그인</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><label for="member_id">아아디</label></th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="member_id" id="member_id" placeholder="아이디"></td>
+                </tr>
+                <tr>
+                    <th><label for="password">비밀번호</label></th>
+                </tr>
+                <tr>
+                    <td><input type="password" name="password" id="password" placeholder="비밀번호"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="submit" id="submit" value="로그인"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

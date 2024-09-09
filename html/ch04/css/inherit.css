@@ -1,0 +1,14 @@
+.first {
+    width: 100%;
+    background-color: red;
+}
+
+.second {
+    width: 500px;
+    background-color: blue;
+}
+
+.third {
+    width: 100%;
+    background-color: green;
+}

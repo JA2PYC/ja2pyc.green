@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts Us</title>
+</head>
+
+<body>
+    <h1>Contacts Us</h1>
+    <hr>
+    <form action="contactus.jsp" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Contacts Us</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><label for="name">이 름</label></th>
+                    <td>
+                        <input type="text" name="name" id="name" placeholder="이 름">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="tel">전화번호</label></th>
+                    <td>
+                        <select name="tel" id="tel">
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                        -
+                        <input type="number" name="tel1" id="tel1" placeholder="전화번호 1" min="0000" max="9999" step="1">
+                        -
+                        <input type="number" name="tel2" id="tel2" placeholder="전화번호 2" min="0000" max="9999" step="1">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="email">이메일</label></th>
+                    <td><input type="email" name="email" id="email" placeholder="이메일"></td>
+                </tr>
+                <tr>
+                    <th><label for="message">남기실 말</label></th>
+                    <td><textarea name="message" id="message"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="보내기!">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

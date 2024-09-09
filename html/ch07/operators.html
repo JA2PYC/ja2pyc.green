@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operators</title>
+    <style>
+        .box {
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function operators(event) {
+            // Set Container
+            let target = event.target;
+            let targetBox = target.parentElement;
+            let dataOperator = targetBox.getAttribute('data-oper');
+            let inputBox = targetBox.querySelector('.result');
+
+            let x = 10;
+            let y = 20;
+            let z;
+
+            switch (dataOperator) {
+                case 'ope1':
+                    z = x + y;
+                    break;
+                case 'ope2':
+                    z = x - y;
+                    break;
+                case 'ope3':
+                    console.log('ope3')
+                    z = x * y;
+                    break;
+                case 'ope4':
+                    console.log('ope4')
+                    z = x / y;
+                    break;
+                case 'ope5':
+                    z = x % y;
+                    break;
+                case 'ope6':
+                    z = ++x;
+                    break;
+                case 'ope7':
+                    z = --y;
+                    break;
+                case 'ope8':
+                    z = 30;
+                    z += x;
+                    break;
+                case 'ope9':
+                    z = 30;
+                    z -= y;
+                    break;
+                case 'ope10':
+                    z = 30;
+                    z *= x;
+                    break;
+                case 'ope11':
+                    z = 1 + 1 + 'car' + 1 + 1;
+                    break;
+                case 'ope12':
+                    z = (x == 10);
+                    break;
+                case 'ope13':
+                    z = (y != 20);
+                    break;
+                case 'ope14':
+                    z = ((x > 10) && (y == 20));
+                    break;
+                case 'ope15':
+                    z = ((x == 10) || (y > 20));
+                    break;
+                case 'ope16':
+                    z = (!(x == 10));
+                    break;
+                case 'ope17':
+                    z = (x < y) ? x : y;
+                    break;
+                case 'ope18':
+                    z = ++x + ++y;
+                    break;
+                case 'ope19':
+                    z = x++ + y++;
+                    break;
+                case 'ope20':
+                    z = (x + y > 3 && y + 5 < 7);
+                    break;
+            }
+
+            console.log(z);
+            inputBox.value = z;
+            console.log('End');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JS Operators</h1>
+    <hr>
+    <div class="container">
+        <div class="box" data-oper="ope1">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 1</button>
+        </div>
+        <div class="box" data-oper="ope2">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Butotn 2</button>
+        </div>
+        <div class="box" data-oper="ope3">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 3</button>
+        </div>
+        <div class="box" data-oper="ope4">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 4</button>
+        </div>
+        <div class="box" data-oper="ope5">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 5</button>
+        </div>
+        <div class="box" data-oper="ope6">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 6</button>
+        </div>
+        <div class="box" data-oper="ope7">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 7</button>
+        </div>
+        <div class="box" data-oper="ope8">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 8</button>
+        </div>
+        <div class="box" data-oper="ope9">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 9</button>
+        </div>
+        <div class="box" data-oper="ope10">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 10</button>
+        </div>
+        <div class="box" data-oper="ope11">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 11</button>
+        </div>
+        <div class="box" data-oper="ope12">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 12</button>
+        </div>
+        <div class="box" data-oper="ope13">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 13</button>
+        </div>
+        <div class="box" data-oper="ope14">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 14</button>
+        </div>
+        <div class="box" data-oper="ope15">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 15</button>
+        </div>
+        <div class="box" data-oper="ope16">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 16</button>
+        </div>
+        <div class="box" data-oper="ope17">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 17</button>
+        </div>
+        <div class="box" data-oper="ope18">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 18</button>
+        </div>
+        <div class="box" data-oper="ope19"><input type="text" class="result" value="" disabled><button
+                onclick="operators(event)">Button 19</button></div>
+        <div class="box" data-oper="ope20">
+            <input type="text" class="result" value="" disabled><button onclick="operators(event)">Button 20</button>
+        </div>
+    </div>
+</body>
+
+</html>

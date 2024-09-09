@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Keyframes</title>
+    <style>
+        .container {
+            position: relative;
+            height: 100vh;
+        }
+
+        .box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: animateBox1 1s ease-in-out infinite;
+        }
+
+        @keyframes animateBox1 {
+            from {
+                top: 0px
+            }
+
+            to {
+                top: 100px
+            }
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            animation: animateBox2 1s ease-in-out infinite;
+        }
+
+        @keyframes animateBox2 {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .box3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            animation: animateBox3 1s ease-in-out infinite;
+        }
+
+        @keyframes animateBox3 {
+            0% {
+                top: 0;
+                left: 0;
+            }
+
+            25% {
+                top: 0;
+                left: 100px;
+            }
+
+            50% {
+                left: 100px;
+                top: 100px;
+            }
+
+            75% {
+                top: 100px;
+                left: 0;
+            }
+
+            100% {
+                top: 0;
+                left: 0
+            }
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            animation: animateBox4 5s cubic-bezier(0.1, -0.1, 0.9, 0.9) infinite;
+        }
+
+        @keyframes animateBox4 {
+            0% {
+                transform: translate(0, 0) rotateY(0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: translate(100px, 100px) rotateY(180deg);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translate(200px, 50px) rotateY(360deg);
+                opacity: 0.5;
+            }
+
+            75% {
+                transform: translate(300px 150px) rotateY(180deg);
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box5 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation: animateBox5 5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+        }
+
+        @keyframes animateBox5 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(100px, 100px);
+            }
+
+            50% {
+                transform: translate(200px, 0);
+            }
+
+            75% {
+                transform: translate(300px, 200px);
+            }
+
+            100% {
+                transform: translate(400px, 100px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Keyframes</h1>
+    <hr>
+    <div class="container">
+        <div class="box1">Box 1</div>
+        <div class="box2">Box 2</div>
+        <div class="box3">Box 3</div>
+        <div class="box4">Box 4</div>
+        <div class="box5">Box 5</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table CSS</title>
+    <style>
+        table {
+            border: 5px solid black;
+            background-color: yellow;
+        }
+
+        table td {
+            border: 5px solid black;
+        }
+
+        table tbody tr:nth-child(1) td {
+            background-color: red;
+        }
+
+        table tbody tr:nth-child(1) td:nth-child(2) {
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Table CSS</h1>
+    <hr>
+    <table>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td rowspan="2">CSS</td>
+                <td>JAVASCRIPT</td>
+                <td>JSP</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

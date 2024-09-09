@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        table{
+            width: 50%;
+        }
+        input[type="text"] {
+            color: blue;
+            border: 2px solid red;
+        }
+
+        input[type="text"]:hover {
+            background-color: yellow;
+        }
+
+        input[type="text"]:focus {
+            font-size: 1.2rem;
+        }
+
+        input[type="submit"] {
+            background-color: yellowgreen;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            display: inline-block;
+            width: 90%;
+            border: 2px solid lightblue;
+            border-radius: 4px;
+            padding: 6px 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Register Form</h1>
+    <hr>
+    <div>
+        <form action="register_from.jsp">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">상품평</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><label for="name">이 름</label></th>
+                        <td><input type="text" name="name" id="name" placeholder="이 름"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">이메일</label></th>
+                        <td><input type="email" name="email" id="email" placeholder="이메일"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="subject">상품평</label></th>
+                        <td><textarea name="subject" id="subject" placeholder="상품평"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="보내기!"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

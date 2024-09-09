@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Table Style</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid green;
+            width: 100px;
+        }
+
+        th {
+            color: white;
+            background-color: green;
+            height: 30px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: yellowgreen;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: lime;
+        }
+
+        table tbody tr:hover {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Table Style</h1>
+    <hr>
+    <table>
+        <caption>성적 리스트</caption>
+        <thead>
+            <tr>
+                <th>학 번</th>
+                <th>이 름</th>
+                <th>학 점</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>학생 1</td>
+                <td>A+</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>학생 2</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>학생 3</td>
+                <td>A-</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

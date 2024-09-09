@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+</head>
+
+<body>
+    <nav>
+        <span>
+            <a href="" onclick="window.location.reload()">Reload</a>
+        </span>
+        <span>
+            <a href="./">Current Folder</a>
+        </span>
+        <span>
+            <a href="/html/">HTML</a>
+        </span>
+        <span>
+            <a href="/">Root</a>
+        </span>
+    </nav>
+    <h1>Rectangle</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">사각형 만들기</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><label for="type">사각형 타입</label></th>
+                <td>
+                    <select name="type" id="type">
+                        <option value="정사각형">정사각형</option>
+                        <option value="직사각형">직사각형</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="color">색상</label></th>
+                <td><input type="color" name="color" id="color"></td>
+            </tr>
+            <tr>
+                <th><label for="size">크기</label></th>
+                <td><input type="number" name="size" id="size" min="1" max="10" step="1"></td>
+            </tr>
+            <tr>
+                <th><label for="opacity">투명도</label></th>
+                <td><input type="range" name="opacity" id="opacity" min="1" max="10" step="1"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

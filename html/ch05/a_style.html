@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS a Style</title>
+    <style>
+        a:link {
+            text-decoration: none;
+            color: red;
+        }
+
+        a:visited {
+            color: green;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        a:active {
+            color: purple;
+        }
+
+        .a-font-size:hover {
+            font-size: 150%;
+        }
+
+        .a1,
+        .a2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fefefe;
+            width: 30%;
+            height: 3rem;
+            border: 2px solid green;
+            padding: 1rem 2rem;
+            margin: 2rem;
+        }
+
+        .a1:hover, .a2:hover {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS a Style</h1>
+    <hr>
+    <p class="a-style"><a href="https://www.google.com/" target="_blank">a Style</a></p>
+    <p class="a-font-size"><a href="https://www.google.com/" target="_blank">google</a></p>
+    <hr>
+    <div>
+        <span class="a1"><a href="" onclick="window.location.reload()">Refresh</a></span>
+        <span class="a2"><a href="/">Root</a></span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Attributes</title>
+    <style>
+        img {
+            width: 250px;
+            height: auto;
+        }
+
+        .bird {
+            opacity: 0.4;
+            transition: opacity 5s;
+        }
+
+        .bird:hover {
+            opacity: 1;
+        }
+
+        .cat {
+            visibility: hidden;
+            border: 1px solid red;
+        }
+
+        .dog {
+            visibility: visible;
+            border: 1px solid blue;
+        }
+
+        .bernese {
+            border: 1px solid burlywood;
+            background: yellow;
+            padding: 2rem;
+            transition: width 5s, height 5s, border 5s, -webkit-transform 5s;
+        }
+
+        .bernese:hover {
+            width: 300px;
+            height: auto;
+            border: 10px solid brown;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Attributes</h1>
+    <hr>
+    <img class="bird" src="/images/bird-3469961_1280.jpg" alt="bird-3469961_1280">
+    <img class="cat" src="/images/cat-7300029_1280.jpg" alt="cat-7300029_1280">
+    <img class="dog" src="/images/dog-7956828_1280.jpg" alt="dog-7956828_1280">
+    <img class="bernese" src="/images/bernese-mountain-dog-7027548_1280.jpg" alt="bernese-mountain-dog-7027548_1280">
+</body>
+
+</html>

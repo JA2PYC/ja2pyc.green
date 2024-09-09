@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS fr</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        .header{
+            height: 100px;
+            background-color: red;
+        }
+
+        .main {
+            height: calc(100% - 100px - 100px);
+            background-color: orange;
+        }
+
+        .footer {
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+        <main class="main">Main</main>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+
+</html>

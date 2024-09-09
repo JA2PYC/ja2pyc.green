@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+<body>
+    <nav>
+        <span>
+            <a href="" onclick="window.location.reload()">Reload</a>
+        </span>
+        <span>
+            <a href="./">Current Folder</a>
+        </span>
+        <span>
+            <a href="/html/">HTML</a>
+        </span>
+        <span>
+            <a href="/">Root</a>
+        </span>
+    </nav>
+    <hr>
+    <h1>프로그래밍 설문지</h1>
+    <hr>
+    <form action="survey.jsp">
+        <table>
+            <thead>
+                <th colspan="2">프로그래밍 설문지</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><label for="name">이 름</label></th>
+                    <td><input type="text" name="name" id="name" placeholder="이 름"></td>
+                </tr>
+                <tr>
+                    <th><label for="email">이메일</label></th>
+                    <td><input type="email" name="email" id="email" placeholder="이메일"></td>
+                </tr>
+                <tr>
+                    <th><label for="age">나 이</label></th>
+                    <td><input type="number" name="age" id="age" min="0" max="100" step="1" placeholder="나 이"></td>
+                </tr>
+                <tr>
+                    <th><label for="job">직 업</label></th>
+                    <td>
+                        <select name="job" id="job">
+                            <option value="student">학 생</option>
+                            <option value="office worker">직장인</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="recommend">이 사이트를 친구에게 추천하시겠습니까?</label></th>
+                    <td>
+                        <input type="radio" name="recommend" id="recommend_yes" value="yes"><label for="recommend_yes">예</label>
+                        <input type="radio" name="recommend" id="recommend_no" value="no"><label for="recommend_no">아니오</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="programming">사용 가능한 프로그래밍 언어</label></th>
+                    <td>
+                        <input type="checkbox" name="programming" id="lang_java" value="java"><label for="lang_java">Java</label>
+                        <input type="checkbox" name="programming" id="lang_c" value="c"><label for="lang_c">C</label>
+                        <input type="checkbox" name="programming" id="lang_php" value="php"><label for="lang_php">PHP</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="message">남기실 말</label></th>
+                    <td>
+                        <textarea name="message" id="message" placeholder="남기실 말"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

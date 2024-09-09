@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+</head>
+<body>
+    <nav>
+        <span>
+            <a href="" onclick="window.location.reload()">Reload</a>
+        </span>
+        <span>
+            <a href="./">Current Folder</a>
+        </span>
+        <span>
+            <a href="/html/">HTML</a>
+        </span>
+        <span>
+            <a href="/">Root</a>
+        </span>
+    </nav>
+    <hr>
+    <h1>여행 신청서</h1>
+    <hr>
+    <form action="travel.jsp" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">여행 신청서</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><label for="name">이 름</label></th>
+                    <td><input type="text" name="name" id="name" placeholder="이 름"></td>
+                </tr>
+                <tr>
+                    <th><label for="email">이메일</label></th>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="이메일">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="destination">목적지</label></th>
+                    <td>
+                        <select name="destination" id="destination">
+                            <option value="america">미국</option>
+                            <option value="euroup">유럽</option>
+                            <option value="china">중국</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="departure">출발일</label></th>
+                    <td>
+                        <input type="date" name="departure" id="departure" min="2024-09-01" max="2024-12-31">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="people">인 원</label></th>
+                    <td>
+                        <input type="number" name="people" id="people" min="1" max="20" step="1" placeholder="인 원">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="tour">선택관광</label></th>
+                    <td>
+                        <input type="checkbox" name="tour" id="shopping" value="shopping"><label for="shopping">쇼핑관공</label>
+                        <input type="checkbox" name="tour" id="hotel" value="hotel"><label for="hotel">호캉스</label>
+                        <input type="checkbox" name="tour" id="attraction" value="attraction"><label for="attraction">체험관공</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="coupon">쿠폰</label></th>
+                    <td>
+                        <input type="text" name="coupon" id="coupon">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="agreement">여행 조건에 동의하십니까?</label></th>
+                    <td>
+                        <input type="radio" name="agreement" id="agreement_yes" value="yes"><label for="agreement_yes">예</label>
+                        <input type="radio" name="agreement" id="agreement_no" value="no"><label for="agreement_no">아니오</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" id="submit" value="보내기!">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    
+</body>
+</html>

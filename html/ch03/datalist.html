@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Datalist</h1>
+    <hr>
+    <p>선호하는 브라우저</p>
+    <form action="input.jsp">
+        <div>
+            <label for="browser">Browser : </label><input list="browsers" id="browser">
+            <datalist id="browsers">
+                <option value="Chrome">Google Chrome</option>
+                <option value="Firefox">Mozilla Firefox</option>
+                <option value="Edge">Microsoft Edge</option>
+                <option value="Opera">Opera Software Opera</option>
+            </datalist>
+            <input type="submit" value="Submit!">
+        </div>
+    </form>
+</body>
+
+</html>
