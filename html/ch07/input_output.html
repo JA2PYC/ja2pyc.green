@@ -54,115 +54,81 @@
         let calc_formula = '';
         let calc_operator = '';
         let calc_result = 0;
+        let last_input = '';
 
         function calculator(event) {
             let target = event.target;
             let calc_input = target.getAttribute('calc_input');
-
             let calc_history = document.querySelector('.calc_history');
             let calc_answer = document.querySelector('.calc_answer');
-            console.log(calc_input);
-            switch (calc_input) {
-                case '0':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '1':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '2':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '3':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '4':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '5':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '6':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '7':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '8':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '9':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '.':
-                    calc_formula += calc_input
-                    calc_history.innerHTML += calc_input;
-                    break;
-                case '+':
-                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
-                    calc_history.innerHTML += ' + ';
-                    calc_operator = '+';
-                    calc_formula = '';
-                    break;
-                case '-':
-                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
-                    calc_history.innerHTML += ' - ';
-                    calc_operator = '-';
-                    calc_formula = '';
-                    break;
-                case '*':
-                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
-                    calc_history.innerHTML += ' * ';
-                    calc_operator = '*';
-                    calc_formula = '';
-                    break;
-                case '/':
-                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
-                    calc_history.innerHTML += ' / ';
-                    calc_operator = '/'
-                    calc_formula = '';
-                    break;
-                case '=':
-                    calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
-                    calc_history.innerHTML += ' = ' + calc_result;
-                    calc_operator = '=';
-                    calc_formula = '';
-                    break;
-                case 'C':
-                    calc_history.innerHTML = '';
-                    calc_operator = '';
-                    calc_formula = '';
-                    calc_result = '';
-                    break;
-            }
 
-            calc_answer.setAttribute('value', String(calc_result));
+            if (!isNaN(calc_input) || calc_input === '.') {
+                if (calc_input === '.' && calc_formula.includes('.')) return;
+
+                calc_formula += calc_input;
+                calc_history.innerHTML += calc_input;
+                last_input = calc_input;
+            } else {
+                switch (calc_input) {
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                        if (last_input === calc_input) return;
+
+                        calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                        calc_history.innerHTML += ` ${calc_input} `;
+                        calc_operator = calc_input;
+                        calc_formula = '';
+                        last_input = calc_input;
+                        break;
+                    case '=':
+                        if (!calc_operator || calc_formula === '') return;
+
+                        calc_result = calculateFormula(calc_formula, calc_operator, calc_result);
+                        calc_history.innerHTML += ` = ${calc_result}\n${calc_result}`;
+                        calc_operator = '=';
+                        calc_formula = '';
+                        last_input = calc_input;
+                        break;
+                    case 'C':
+                        calc_history.innerHTML = '';
+                        calc_operator = '';
+                        calc_formula = '';
+                        calc_result = 0;
+                        last_input = '';
+                        break;
+                }
+                calc_answer.setAttribute('value', String(calc_result));
+            }
         }
 
         function calculateFormula(formula, operator, result) {
             if (formula === '') return result;
 
-            if (operator === '') {
-                result = parseFloat(formula);
-            } else if (operator === '+') {
-                result += parseFloat(formula);
-            } else if (operator === '-') {
-                result -= parseFloat(formula);
-            } else if (operator === '*') {
-                result *= parseFloat(formula);
-            } else if (operator === '/') {
-                result /= parseFloat(formula);
-            } else if (operator === '=') {
-                result = result;
+            let number = parseFloat(formula);
+            if (isNaN(number)) return result;
+
+            switch (operator) {
+                case '+':
+                    result += number;
+                    break;
+                case '-':
+                    result -= number;
+                    break;
+                case '*':
+                    result *= number;
+                    break;
+                case '/':
+                    if (number === 0) {
+                        alert('0을 나눌 수 없습니다.');
+                        return result;
+                    }
+                    result /= number;
+                    break;
+                default:
+                    result = number;
+                    break
             }
 
             return result;
@@ -176,11 +142,25 @@
             if (practice_name) {
                 practice_p.innerHTML = '결과 : ' + practice_name + '님 안녕하세요!';
             } else {
-                practice_p.innerHTML =  '입력된 이름이 없습니다.';
+                practice_p.innerHTML = '입력된 이름이 없습니다.';
             }
 
         }
     </script>
+    <style>
+        .calculator table {
+            width: 500px;
+            max-width: 100%;
+        }
+
+        .calculator textarea,
+        .calculator input,
+        .calculator button {
+            width: 100%;
+            height: 3rem;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
