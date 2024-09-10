@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS For While DoWhile</title>
+    <style>
+        .table_nest {
+            width: 600px;
+            max-width: 100%;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .table_nest thead tr {
+            height: 2.5rem;
+            background-color: #d0d0d0;
+        }
+
+        .table_nest tbody tr:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+        .table_nest tbody tr:nth-child(even) {
+            background-color: #d0d0d0;
+        }
+    </style>
+    <script>
+        addEventListener('DOMContentLoaded', () => {
+            function callFor() {
+                let input_for = document.getElementsByClassName('input_for');
+                let input_forArr = Array.from(input_for);
+                input_forArr.forEach(function (array) {
+                    for (let i = 0; i < 10; i++) {
+                        array.value += i + 1 + ',';
+                    }
+
+                    if (array.value.endsWith(',')) {
+                        array.value = array.value.slice(0, -1);
+                    }
+                });
+            }
+
+            function callForNested() {
+                let table_nest = document.getElementsByClassName('table_nest');
+                let table_nestArr = Array.from(table_nest);
+
+                table_nestArr.forEach((array) => {
+                    // Set tbody
+                    let table_thead = document.createElement('thead');
+                    table_thead.className = 'thead';
+                    array.appendChild(table_thead);
+
+                    let thead_tr = document.createElement('tr');
+                    thead_tr.className = 'tr';
+                    table_thead.appendChild(thead_tr);
+
+                    let tr_th = document.createElement('th');
+                    tr_th.className = 'th';
+                    tr_th.colSpan = '10';
+                    tr_th.textContent = '구구단';
+                    thead_tr.appendChild(tr_th);
+
+                    let table_tbody = document.createElement('tbody');
+                    table_tbody.className = 'tbody';
+                    array.appendChild(table_tbody);
+
+                    for (let i = 1; i < 10; i++) {
+                        let tbody_tr = document.createElement('tr');
+                        tbody_tr.className = 'tr';
+                        table_tbody.appendChild(tbody_tr);
+
+                        let tr_th = document.createElement('th');
+                        tr_th.className = 'th';
+                        tr_th.textContent = i + '단';
+                        tbody_tr.appendChild(tr_th);
+
+                        for (let j = 1; j < 10; j++) {
+                            let z = i * j;
+
+                            let tr_td = document.createElement('td');
+                            tr_td.className = 'td';
+                            tr_td.textContent = z;
+                            tbody_tr.appendChild(tr_td);
+
+                        }
+                    }
+                });
+            }
+
+            function callWhile() {
+                let input_while = document.getElementsByClassName('input_while');
+                let input_whileArr = Array.from(input_while);
+
+                input_whileArr.forEach((array) => {
+                    let i = 0;
+
+                    while (i < 10) {
+                        array.value += i + ', ';
+                        i++;
+                    }
+
+                    array.value = array.value.trim();
+                    if (array.value.endsWith(',')) {
+                        array.value = array.value.slice(0, -1);
+                    }
+                })
+            }
+
+            function callDoWhile() {
+                let input_dowhile = document.getElementsByClassName('input_dowhile');
+                let input_dowhileArr = Array.from(input_dowhile);
+
+                input_dowhileArr.forEach((array) => {
+                    let i = 0;
+
+                    do {
+                        i++;
+                        array.value += i + ', ';
+                    } while (i < 10)
+
+                    array.value = array.value.trim();
+                    if (array.value.endsWith(',')) {
+                        array.value = array.value.slice(0, -1);
+                    }
+
+                });
+            }
+
+            function callSum() {
+                let input_sum = document.getElementsByClassName('input_sum');
+                let input_sumArr = Array.from(input_sum);
+
+                input_sumArr.forEach((array) => {
+                    let result = 0;
+                    for (let i = 0; i < 100; i++) {
+                        result += (parseInt(i) + 1);
+                        console.log(result);
+                    }
+                    array.value = result;
+                });
+            }
+
+            function callSumEven() {
+                let input_sumEven = document.getElementsByClassName('input_sumEven');
+                let input_semEvenArr = Array.from(input_sumEven);
+
+                input_semEvenArr.forEach((array) => {
+                    let z = 0;
+                    let result = 0;
+                    while (z < 100) {
+                        if ((z + 1) % 2 === 0) {
+                            result += z + 1;
+                        }
+                        z++;
+                    }
+                    array.value = result;
+                });
+            }
+
+            // Initialize
+            callFor();
+            callForNested();
+            callWhile();
+            callDoWhile();
+            callSum();
+            callSumEven();
+        });
+    </script>
+</head>
+
+<body>
+    <h1>JS For While DoWhile</h1>
+    <hr>
+    <div class="container">
+        <div class="for">
+            <input type="text" class="input_for" />
+            <input type="text" class="input_for" />
+            <input type="text" class="input_for" />
+            <input type="text" class="input_for" />
+            <input type="text" class="input_for" />
+        </div>
+        <hr>
+        <div class="for_nested">
+            <table class="table_nest"></table>
+        </div>
+        <hr>
+        <div class="while">
+            <input type="text" class="input_while" />
+            <input type="text" class="input_while" />
+            <input type="text" class="input_while" />
+            <input type="text" class="input_while" />
+            <input type="text" class="input_while" />
+        </div>
+        <hr>
+        <div class="dowhile">
+            <input type="text" class="input_dowhile" />
+            <input type="text" class="input_dowhile" />
+            <input type="text" class="input_dowhile" />
+            <input type="text" class="input_dowhile" />
+            <input type="text" class="input_dowhile" />
+        </div>
+        <hr>
+        <div class="sum">
+            <input type="text" class="input_sum" />
+            <input type="text" class="input_sum" />
+            <input type="text" class="input_sum" />
+            <input type="text" class="input_sum" />
+            <input type="text" class="input_sum" />
+        </div>
+        <hr>
+        <div class="sum_even">
+            <input type="text" class="input_sumEven" />
+            <input type="text" class="input_sumEven" />
+            <input type="text" class="input_sumEven" />
+            <input type="text" class="input_sumEven" />
+            <input type="text" class="input_sumEven" />
+        </div>
+    </div>
+</body>
+
+</html>
