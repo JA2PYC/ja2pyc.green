@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Guess Number</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/guess_number.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Guess Number</h1>
+            <hr>
+            <div class="result">
+                <input type="text" class="input_counter" placeholder="추측횟수" disabled />
+                <input type="text" class="input_result" placeholder="추측결과" disabled />
+            </div>
+            <div class="result">
+                <input type="text" class="input_counter" placeholder="추측횟수" disabled />
+                <input type="text" class="input_result" placeholder="추측결과" disabled />
+            </div>
+            <div class="guess">
+                <input type="text" class="input_guess" placeholder="추측숫자" />
+                <button class="button_guess">추측하기</button>
+                <button class="button_reset">초기화</button>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
