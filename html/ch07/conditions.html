@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Conditions</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/conditions.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Conditions</h1>
+            <hr>
+            <div class="regexp">
+                <input type="text" class="input_result" placeholder="인사말 입력기" disabled />
+                <button type="button" class="button_regexp">RegExp</button>
+            </div>
+            <div class="divide">
+                <input type="text" class="input_result" placeholder="나누기 4" disabled />
+                <input type="text" class="input_divide" placeholder="4로 나눌 숫자를 입력해주세요." />
+                <button type="button" class="button_divide">Divide 4</button>
+            </div>
+            <div class="distinguish">
+                <input type="text" class="input_result" placeholder="양수 음수 구분기" disabled />
+                <input type="text" class="input_distinguish" placeholder="숫자를 입력해주세요." />
+                <button type="button" class="button_distinguish">Distinguish</button>
+            </div>
+            <div class="average">
+                <input type="text" class="input_result" placeholder="평균 계산기" disabled />
+                <input type="text" class="input_average" placeholder="몇개를 계산하실 건가요?" />
+                <button type="button" class="button_average">Average</button>
+            </div>
+            <hr>
+            <div class="reg_loop">
+                <input type="text" class="input_result" placeholder="인사말 반복기" disabled /> 
+                <button type="button" class="button_reg_loop">RegLoop</button>
+            </div>
+            <div class="sum">
+                <input type="text" class="input_result" placeholder="합계 계산기" disabled />
+                <input type="text" class="input_sum" placeholder="1부터 입력한 숫자까지의 합" />
+                <button type="button" class="button_sum">Sum</button>
+            </div>
+            <div class="sum_custom">
+                <input type="text" class="input_result" placeholder="사용자 합계 계산기" disabled />
+                <button type="button" class="button_sum_custom">Sum Custom</button>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>

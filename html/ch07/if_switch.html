@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS If Switch</title>
+    <script>
+        addEventListener('DOMContentLoaded', () => {
+            let time = new Date().getHours();
+            let msg;
+
+            // Set Elements
+            let current_time = document.getElementsByClassName('current_time');
+            let current_timeArr = Array.from(current_time);
+            let message = document.getElementsByClassName('message');
+            let messageArr = Array.from(message);
+
+            current_timeArr.forEach(function (array) {
+                array.setAttribute('value', String('Time : ' + time));
+            })
+
+            if (time < 12) {
+                msg = 'Good Morning';
+            } else if (time < 18) {
+                msg = 'Good Afternoon';
+            } else {
+                msg = 'Good Evening';
+            }
+
+            messageArr.forEach(function (array) {
+                array.setAttribute('value', String(msg));
+            });
+
+            let day = new Date().getDay()
+
+            let week = document.getElementsByClassName('msg_week');
+            let weekArr = Array.from(week);
+            let msg_week;
+
+            switch (day) {
+                case 0:
+                case 6:
+                    msg_week = '주말';
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    msg_week = '주중';
+                    break;
+            };
+
+            msg_week.trim()
+
+            weekArr.forEach((array) => {
+                array.setAttribute('value', String('오늘은 ' + msg_week + ' 입니다.'));
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>JS If Switch</h1>
+    <hr>
+    <div class="container">
+        <div>
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+            <input type="text" class="current_time" disabled />
+        </div>
+        <div>
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+            <input type="text" class="message" disabled />
+        </div>
+        <hr>
+        <div>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+            <input type="text" class="msg_week" disabled>
+        </div>
+        <hr>
+    </div>
+</body>
+
+</html>
