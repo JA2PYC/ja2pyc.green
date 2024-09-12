@@ -1,0 +1,7 @@
+.main_container .interval .max_value {
+    border: 2px solid red;
+}
+
+.main_container .interval .max_counter {
+    border: 2px solid blue
+}

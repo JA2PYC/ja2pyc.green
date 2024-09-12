@@ -187,17 +187,15 @@ addEventListener('DOMContentLoaded', () => {
             if (!userInput2 || isNaN(userInput2)) return alert('숫자를 입력해주세요.');
             let userNumber2 = parseInt(userInput2);
 
-            if (userNumber1 > userNumber2) return alert('두번째 숫자는 첫번째 숫자보다 커야합니다.');
+            if (userNumber1 >= userNumber2) return alert('두번째 숫자는 첫번째 숫자보다 커야합니다.');
 
             let result = 0;
             for (let i = userNumber1; i < userNumber2 + 1; i++) {
-                console.log(i);
                 result += i;
             }
 
             input_result.value = '합계 : ' + result;
         }
-
     }
 
     // Initialize
