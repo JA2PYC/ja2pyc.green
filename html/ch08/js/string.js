@@ -55,6 +55,8 @@ addEventListener('DOMContentLoaded', () => {
         let totalValue = valueNumber1 + valueNumber2;
 
         console.log(totalValue.length)
+        console.log(totalValue.charAt(8))
+        console.log(totalValue[8])
         if (totalValue.length === 9) {
             if (totalValue[8] === '1' || totalValue[8] === '3') {
                 input_result.value = '남성 입니다.';

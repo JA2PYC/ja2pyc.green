@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ID Checker</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/id_checker.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS ID Checker</h1>
+            <hr>
+            <div class="id_checker">
+                <span>ID : </span>
+                <input type="text" class="input_id" />
+                <button type="button" class="button_id">Check</button>
+                <div class="result">
+                    <input type="text" class="input_result_blur" disabled />
+                    <input type="text" class="input_result" disabled />
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
