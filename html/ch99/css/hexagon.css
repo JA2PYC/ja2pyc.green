@@ -1,0 +1,72 @@
+:root {
+    --hexagon-width: 100px;
+    --hexagon-height: 100px;
+    --hexagon-border: 5px;
+    --hexagon-polygon: 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%;
+    --hexagon-polygon-row: 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%;
+    --hexagon-margin: -100px
+}
+
+.main_container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hexagon_container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hexagon_container:first-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: var(--hexagon-margin) 0 0 var(--hexagon-margin);
+}
+
+.hexagon_container:last-of-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 var(--hexagon-margin) var(--hexagon-margin) 0;
+}
+
+.hexagon_row {
+    display: flex;
+}
+
+.hexagon_row:nth-child(even) {
+    margin: -25px 0 0 -50px;
+}
+
+.hexagon_row:nth-child(odd) {
+    margin: -25px 0 0 0;
+}
+
+.hexagon_row:first-child {
+    margin: 0;
+}
+
+.hexagon {
+    position: relative;
+    width: var(--hexagon-width);
+    height: var(--hexagon-height);
+    background-color: red;
+    clip-path: polygon(var(--hexagon-polygon));
+    margin: 5px;
+}
+
+.hexagon_inner {
+    position: absolute;
+    top: var(--hexagon-border);
+    left: var(--hexagon-border);
+    width: calc(var(--hexagon-width) - var(--hexagon-border) - var(--hexagon-border));
+    height: calc(var(--hexagon-height) - var(--hexagon-border) - var(--hexagon-border));
+    background-color: #f0f0f0;
+    clip-path: polygon(var(--hexagon-polygon));
+    z-index: 10;
+}
