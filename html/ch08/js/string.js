@@ -21,6 +21,8 @@ addEventListener('DOMContentLoaded', () => {
                 callRandomFruit(target, event);
             } else if (target.classList.contains('button_strFind')) {
                 callStrFind(target, event);
+            } else if (target.classList.contains('button_newUser')) {
+                callNewUser(target, event);
             }
         });
     }
@@ -178,6 +180,33 @@ addEventListener('DOMContentLoaded', () => {
         })
 
         inputResult.value = result;
+    }
+
+    function UserObject (newId, newName, newAge) {
+        this.userId = newId;
+        this.userName = newName;
+        this.userAge = newAge;
+        this.userInfo = function () {
+            return [this.userId, this.userName, this.userAge];
+        }
+    }
+
+    function callNewUser(target, event) {
+        let targetParent = target.parentElement;
+        let inputResult = targetParent.querySelector('.input_result');
+        let inputNewUser = targetParent.querySelector('.input_newUser');
+
+        let userInput = inputNewUser.value;
+        if (!userInput) return inputResult.value = '데이터를 입력해주세요.';
+
+        let inputArr = userInput.split(',');
+        if (inputArr.length !== 3) return inputResult.value = '데이터를 3개 입력해주세요.'
+
+        let newUser = new UserObject(inputArr[0], inputArr[1], inputArr[2]);
+
+        let userInfoArr = newUser.userInfo();
+
+        inputResult.value = 'ID : ' + userInfoArr[0] + ', 이름 : ' + userInfoArr[1] + ', 나이 : ' + userInfoArr[2];
     }
 
     initialize();
