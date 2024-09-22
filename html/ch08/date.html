@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Date</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/date.js"></script>
+</head>
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Date</h1>
+            <hr>
+            <div class="date_july">
+                <div><input type="text" class="input_result" disabled /></div>
+                <button type="button" class="button_dateJuly">July</button>
+            </div>
+            <hr>
+            <div class="date_expire">
+                <div><input type="text" class="input_result" disabled /></div>
+                <input type="date" name="input_dateFrom" id="input_dateFrom" class="input_dateFrom" />
+                <button type="button" class="button_dateExpire">Expire</button>
+            </div>
+            <hr>
+            <div class="date_passTime">
+                <div><input type="text" class="input_result" disabled /></div>
+                <input type="number" class="input_passTarget" placeholder="목표 숫자를 입력해주세요."/>
+                <button type="button" class="button_passTime">Pass</button>
+            </div>
+            <hr>
+            <div class="date_getMonth">
+                <div><input type="text" class="input_result" disabled /></div>
+                <input type="date" name="input_dateGetMonth" id="input_dateGetMonth" class="input_dateGetMonth" />
+                <button type="button" class="button_dateGetMonth">Get Month</button>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+</html>
