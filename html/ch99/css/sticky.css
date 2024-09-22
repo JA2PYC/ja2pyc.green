@@ -1,0 +1,19 @@
+main {
+    position: relative;
+}
+
+.main_container {
+    position: relative;
+}
+
+.sticky_container {
+    position: relative;
+}
+
+.sticky {
+    position: sticky;
+    position:-webkit-sticky;
+    top: 100px; 
+    color: #f0f0f0;
+    background-color: red;
+}
