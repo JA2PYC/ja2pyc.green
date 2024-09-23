@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Input Value</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/input_value.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Input Value</h1>
+            <hr>
+            <div class="input_value">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="text" class="input_value" />
+                <button type="button" class="button_input_value">Value</button>
+            </div>
+            <hr>
+            <div class="dom_form">
+                <div><textarea name="forms_result" id="forms_result" class="result"></textarea></div>
+                <form action="" method="get" class="form1">
+                    <input type="text" class="form_data1" value="Form_Data1" />
+                    <input type="text" class="form_data2" value="Form_Data2" />
+                </form>
+                <form action="" name="form_name" method="post" class="form2">
+                    <input type="text" name="data1" class="name_data1" value="Name_Data1" />
+                    <input type="text" name="data2" class="name_data2" value="Name_Data2" />
+                </form>
+                <button type="button" class="button_dom_form">Forms</button>
+            </div>
+            <hr>
+            <div class="input_checkbox">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="checkbox" name="input_checkbox" id="input_checkbox" class="input_checkbox" />
+                <button type="button" class="button_checkbox">CheckBox</button>
+            </div>
+            <hr>
+            <div class="input_radio">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="radio" name="input_radio" id="radio1" value="radio1"><label for="radio1">Radio 1</label>
+                <input type="radio" name="input_radio" id="radio2" value="radio2"><label for="radio2">Radio 2</label>
+                <input type="radio" name="input_radio" id="radio3" value="radio3"><label for="radio3">Radio 3</label>
+                <button type="button" class="button_radio">Radio</button>
+            </div>
+            <hr>
+            <div class="input_select">
+                <div><input type="text" class="result" disabled /></div>
+                <select name="select_lang" id="select_lang" class="select_lang">
+                    <option value="">Select</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JS</option>
+                </select>
+                <button type="button" class="button_select">Select</button>
+            </div>
+            <hr>
+            <div class="calc_radius">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="number" class="input_radius" placeholder="Radius" />
+                <input type="radio" name="input_shape" id="area" value="area" /><label for="area">AREA</label>
+                <input type="radio" name="input_shape" id="volume" value="volume" /><label for="volume">Volume</label>
+                <button type="button" class="button_radius">Calc Radius</button>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
