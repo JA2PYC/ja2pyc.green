@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS getElement</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/getElement.js"></script>
+</head>
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS getElement</h1>
+            <hr>
+            <div class="by_id">
+                <div><input type="text" class="result" disabled /></div>
+                <div id="element_by_id" class="element_by_id">ID</div>
+                <button type="button" class="button_by_id">getElementById</button>
+            </div>
+            <hr>
+            <div class="by_tagName">
+                <div><textarea name="by_tagName" id="by_tagName" class="result"></textarea></div>
+                <p>By Tag Name 1</p>
+                <p>By Tag Name 2</p>
+                <p>By Tag Name 3</p>
+                <button type="button" class="button_by_tagName">getElementsByTagName</button>
+            </div>
+            <hr>
+            <div class="by_queryAll">
+                <div><textarea name="by_queryAll" id="by_queryAll" class="result"></textarea></div>
+                <p class="css_queryAll">Query 1</p>
+                <p class="css_queryAll">Query 2</p>
+                <p class="css_queryAll">Query 3</p>
+                <button type="button" class="button_by_queryAll">querySelectorAll</button>
+            </div>
+            <hr>
+            <div class="by_nodes">
+                <div><textarea name="by_nodes" id="by_nodes" class="result"></textarea></div>
+                <p class="node_child0">Child 1</p>
+                <p class="node_child1">Child 2</p>
+                <p class="node_child2">Child 3</p>
+                <button type="button" class="button_by_nodes">childNodes</button>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+</html>

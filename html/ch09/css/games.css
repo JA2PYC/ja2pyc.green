@@ -1,0 +1,35 @@
+.dice_result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    color: #0e0e0e;
+    font-size: 3rem;
+    font-weight: 500;
+    background-color: #5f5f5f5f;
+    border-radius: 10px;
+}
+
+.mine_grid {
+    display: grid;
+    /* grid-template-columns: repeat(12, 20px);
+    grid-template-rows: repeat(12, 20px); */
+    gap: 5px;
+}
+
+.mine_box {
+    width: 20px;
+    height: 20px;
+    background-color: #00449999;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.mine .box_safe {
+    background-color: #00550099;
+}
+
+.mine .box_bomb {
+    background-color: #55000099;
+}

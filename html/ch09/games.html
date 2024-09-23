@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Games</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="./css/games.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/games.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Games</h1>
+            <hr>
+        </div>
+        <div class="roll_dice">
+            <div class="result dice_result">0</div>
+            <button type="button" class="button_dice">Roll</button>
+        </div>
+        <hr>
+        <div class="mine">
+            <div class="result mine_grid"></div>
+            <button class="button_new_mine">New Game</button>
+        </div>
+        <hr>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
