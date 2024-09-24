@@ -3,7 +3,7 @@
     --base-color-2: #112233;
 }
 
-img{
+img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -15,7 +15,10 @@ textarea {
     box-sizing: border-box;
 }
 
-input[type=text] {
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=number] {
     width: 100%;
     box-sizing: border-box;
 }

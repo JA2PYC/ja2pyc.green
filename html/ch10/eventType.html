@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Type</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/eventType.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Event Type</h1>
+            <hr>
+            <div class="mouseOver">
+                <p class="p_mouseOver">Mouse Over Event</p>
+            </div>
+            <hr>
+            <div class="eventObject">
+                <div><input type="text" class="result" disabled /></div>
+                <button type="button" class="button_eventObject">Event Object</button>
+            </div>
+            <hr>
+            <div class="bubbleCapture">
+                <div><input type="text" class="result" disabled /></div>
+                <button type="button" class="button_useBubble">Bubbling</button>
+                <button type="button" class="button_useCapture">Capturing</button>
+            </div>
+            <hr>
+            <div class="eval">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="text" class="input_eval" />
+                <button type="button" class="button_eval">Eval</button>
+            </div>
+            <hr>
+            <div class="mouseDownUp">
+                <div><button type="button" class="result">Result</button></div>
+                <button type="button" class="button_mouseDownUp">Mouse Down Up</button>
+            </div>
+            <hr>
+            <div class="wheelEvent">
+                <div>
+                    <p class="result p_wheel">Wheel</p>
+                </div>
+            </div>
+            <hr>
+            <div class="mouseEnterLeave">
+                <div><input type="text" class="result" disabled /></div>
+                <button type="button" class="button_mouseEnterLeave">Mouse Enter Leave</button>
+            </div>
+            <hr>
+            <div class="mousemoveEvent">
+                <div><input type="text" class="result" disabled /></div>
+                <img src="/images/sky-2546570_1280.jpg" alt="sky-2546570_1280" title="sky-2546570_1280"
+                    class="img_mousemove" />
+            </div>
+            <hr>
+            <div class="loadEvent">
+                <div><input type="text" class="result" disabled /></div>
+                <!-- It is hard to use addEventListener. -->
+                <img src="/images/rabbit-5736113_1280.jpg" alt="rabbit-5736113_1280" title="rabbit-5736113_1280"
+                    class="img_load" onload="callLoadEvent(event)" />
+            </div>
+            <hr>
+            <div class="changeEvent">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="text" class="input_change">
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
