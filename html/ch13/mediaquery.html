@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Query</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="./css/mediaquery.css">
+    <script src="/js/include-html.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>CSS Media Query</h1>
+            <hr>
+            <div class="screen">
+                <div class="box screen_box"></div>
+                <div class="box screen_box"></div>
+            </div>
+            <hr>
+            <div class="orientation">
+                <div class="box orientation_box"></div>
+                <div class="box orientation_box"></div>
+            </div>
+            <hr>
+            <div class="break_point">
+                <div class="box break_point_box"></div>
+            </div>
+            <hr>
+            <div class="mobile_header">
+                <div class="box header_left"></div>
+                <div class="box header_center"></div>
+                <div class="box header_right"></div>
+            </div>
+            <hr>
+            <div class="mobile_layout">
+                <div class="box layout_header"></div>
+                <div class="layout_main">
+                    <div class="box layout_aside"></div>
+                    <div class="box layout_section"></div>
+                </div>
+                <div class="box layout_footer"></div>
+            </div>
+            <hr>
+            <div class="fluid_layout">
+                <div class="box fluid_left"></div>
+                <div class="box fluid_center"></div>
+                <div class="box fluid_right"></div>
+            </div>
+            <hr>
+            <div class="grid_layout">
+                <div class="box grid_article">1</div>
+                <div class="box grid_article">2</div>
+                <div class="box grid_article">3</div>
+                <div class="box grid_article">4</div>
+                <div class="box grid_article">5</div>
+                <div class="box grid_article">6</div>
+                <div class="box grid_article">7</div>
+            </div>
+            <hr>
+            <div class="grid_area">
+                <div class="box area_header"></div>
+                <div class="box area_aside"></div>
+                <div class="area_section">
+                    <div class="box area_article">1</div>
+                    <div class="box area_article">2</div>
+                    <div class="box area_article">3</div>
+                    <div class="box area_article">4</div>
+                    <div class="box area_article">5</div>
+                    <div class="box area_article">6</div>
+                    <div class="box area_article">7</div>
+                </div>
+                <div class="box area_footer"></div>
+            </div>
+            <hr>
+            <div class="fluid_img">
+                <img src="/images/sky-2546570_1280.jpg" alt="sky-2546570_1280" class="img_percent" />
+                <img src="/images/cat-7300029_1280.jpg" alt="cat-7300029_1280" class="img_max_width" />
+            </div>
+            <hr>
+            <div class="picture_source">
+                <picture class="picture">
+                    <source media="(max-width: 768px)" srcset="/images/rabbit-5736113_1280.jpg">
+                    <source media="(min-width: 769px) and (max-width: 1024px)" srcset="/images/bird-3469961_1280.jpg">
+                    <source media="(min-width: 1025px) and (max-width: 1440px)" srcset="/images/dog-7956828_1280.jpg">
+                    <img src="/images/wind-8324507_1280.jpg" alt="picture_source" title="picture_source">
+                </picture>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
