@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Responsive Web Desigin</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="./css/responsive_web_design.css">
+    <script src="/js/include-html.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>CSS Responsive Web Design</h1>
+            <hr>
+            <div class="picture_media">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/images/rabbit-5736113_1280.jpg" />
+                    <img src="/images/rabbit-5736113_1280.jpg" alt="picture_media" title="picture_media" />
+                </picture>
+            </div>
+            <hr>
+            <div class="grid_box">
+                <div class="box boxA">boxA</div>
+                <div class="box boxB">boxB</div>
+                <div class="box boxC">boxC</div>
+                <div class="box boxD">boxD</div>
+                <div class="box boxE">boxE</div>
+            </div>
+            <hr>
+            <div class="grid_media">
+                <div class="media media1">media1</div>
+                <div class="media media2">media2</div>
+                <div class="media media3">media3</div>
+                <div class="media media4">media4</div>
+                <div class="media media5">media5</div>
+                <div class="media media6">media6</div>
+            </div>
+            <hr>
+            <div class="grid_layout">
+                <div class="header">Header</div>
+                <div class="menu">Menu</div>
+                <div class="main">
+                    <section class="main_section">Section</section>
+                    <section class="main_section">Section</section>
+                </div>
+                <div class="aside">Aside</div>
+                <div class="footer">Footer</div>
+            </div>
+            <hr>
+            <div class="grid_column">
+                <div class="column1">Column1</div>
+                <div class="column2">Column2</div>
+                <div class="column3">Column3</div>
+                <div class="column4">Column4</div>
+                <div class="column5">Column5</div>
+                <div class="column6">Column6</div>
+                <div class="column7">Column7</div>
+                <div class="column8">Column8</div>
+                <div class="column9">Column9</div>
+                <div class="column10">Column10</div>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
