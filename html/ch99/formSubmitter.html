@@ -19,7 +19,7 @@
             <h1>JS Form Submitter</h1>
             <hr>
             <div class="form_container">
-                <form action="" method="post">
+                <form action="formSubmitter.jsp" method="post">
                     <div>
                         <label for="input_id">ID</label><span class="reg_result"></span>
                         <input type="text" name="input_id" id="input_id" />
@@ -29,8 +29,8 @@
                         <input type="password" name="input_password" id="input_password" />
                     </div>
                     <div>
-                        <label for="input_password_re">Password (RE)</label><span class="reg_result"></span>
-                        <input type="password" name="input_password_re" id="input_password_re" />
+                        <label for="input_password_verify">Password (Verify)</label><span class="reg_result"></span><span class="ver_result"></span>
+                        <input type="password" name="input_password_verify" id="input_password_verify" />
                     </div>
                     <div>
                         <label for="input_name">Name</label><span class="reg_result"></span>
@@ -51,6 +51,10 @@
                     <div>
                         <label for="input_tel">Tel</label><span class="reg_result"></span>
                         <input type="tel" name="input_tel" id="input_tel" />
+                    </div>
+                    <div>
+                        <label for="textarea_des">Description</label><span class="reg_result"></span>
+                        <textarea name="textarea_des" id="textarea_des"></textarea>
                     </div>
                     <div>
                         <input type="submit" value="Submit" />
