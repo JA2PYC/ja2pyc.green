@@ -23,31 +23,34 @@ addEventListener('DOMContentLoaded', () => {
         }
 
         let formsAll = document.forms;
+        let isSubmitting = false;
         Array.from(formsAll).forEach((form) => {
-            let inputAll = form.querySelectorAll('input');
-            Array.from(inputAll).forEach((input) => {
-                if (input.disabled === false) {
-                    console.log(input)
-                    // input.addEventListener('input', callRegExpChecker(input));
-                }
-            })
+            // Set Submit Preventer
+            if (isSubmitting) return;
 
             form.addEventListener('submit', (submitEvent) => {
                 submitEvent.preventDefault();
 
                 let isValidArr = [];
-                Array.from(submitEvent.target).forEach((array) => {
+                Array.from(submitEvent.target.elements).forEach((array) => {
                     if (array.tagName === 'INPUT' && array.disabled === false) {
                         isValidArr.push(callRegExpChecker(array));
                     }
                 });
 
-                let validResult = isValidArr.every((validValue) => {
-                    return validValue;
-                });
+                let validResult = isValidArr.every(Boolean);
 
                 if (validResult) {
+                    isSubmitting = true;  
                     submitEvent.target.submit();
+                }
+            });
+
+            // Set Input Checker
+            let inputAll = form.querySelectorAll('input');
+            Array.from(inputAll).forEach((input) => {
+                if (input.disabled === false) {
+                    input.addEventListener('input', (input) => callRegExpChecker(input.target));
                 }
             });
         })
@@ -57,7 +60,7 @@ addEventListener('DOMContentLoaded', () => {
         let targetParent = target.parentNode;
         let result = targetParent.querySelector('.result');
 
-        let quantityValue = parseInt(result.value);
+        let quantityValue = parseInt(result.value) || 0;
         if (target.classList.contains('button_plus')) {
             quantityValue += 1;
         } else {
@@ -92,8 +95,9 @@ addEventListener('DOMContentLoaded', () => {
         let result = targetParent.querySelector('.result');
 
         let textLenght = target.value.length;
+        let textCheckResult;
         if (textLenght > 100) {
-            textCheckResult = '글자수 : ' + textLenght + '/100 // 글자수 초과ㄹㅇㄴ';
+            textCheckResult = '글자수 : ' + textLenght + '/100 // 글자수 초과';
         } else {
             textCheckResult = '글자수 : ' + textLenght + '/100';
         }
@@ -111,13 +115,13 @@ addEventListener('DOMContentLoaded', () => {
 
         let priceSum = 0;
         priceAll.forEach((array) => {
-            priceSum += parseInt(array.value);
+            priceSum += parseInt(array.value) || 0;
         });
 
         let checkedPrice = 0;
         checkAll.forEach((array) => {
             if (array.checked) {
-                checkedPrice += parseInt(array.value);
+                checkedPrice += parseInt(array.value) || 0;
             }
         });
 
@@ -125,13 +129,14 @@ addEventListener('DOMContentLoaded', () => {
         result.value = '총 가격 : ' + totalPriceValue;
     }
 
-    function callFormValidator(event, target) {
-
-    }
-
     function callRegExpChecker(target) {
         let targetParent = target.parentNode;
         let result = targetParent.querySelector('.result');
+
+        if (!result) {
+            console.warn('result element not found.');
+            return false;
+        }
 
         if (!target.value) {
             result.value = '검증 대상이 없습니다.';
