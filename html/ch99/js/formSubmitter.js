@@ -21,7 +21,7 @@ addEventListener('DOMContentLoaded', () => {
 
                 // Set Password Verifier
                 if (inputPasswordArr.length >= 2) {
-                    callVerifyPassword(inputPasswordArr);
+                    inputPasswordArr[inputPasswordArr.length - 1].addEventListener('input', (inputEvent) => callVerifyPassword(inputPasswordArr));
                 }
 
                 // Set Form Submitter
@@ -32,9 +32,12 @@ addEventListener('DOMContentLoaded', () => {
                     let isValidArr = [];
 
                     // Call RegExp Checker
-                    Array.from(formDataArr).forEach((inputTarget) => {
+                    formDataArr.forEach((inputTarget) => {
                         isValidArr.push(callRegExpChecker(inputTarget))
                     });
+
+                    // Call Passwor Verifier
+                    isValidArr.push(callVerifyPassword(inputPasswordArr));
 
                     // Check Valid Result
                     let validResult = isValidArr.every(Boolean);
@@ -51,18 +54,40 @@ addEventListener('DOMContentLoaded', () => {
     function callVerifyPassword(target) {
         if (!Array.isArray(target)) return;
         let targetArr = Array.from(target);
-   
-        targetArr.forEach((inputField) => {
-            inputField.addEventListener('input', () => {
-                const allMatch = targetArr.every(field => field.value === targetArr[0].value);
-                if (!allMatch) {
-                    alert("비밀번호가 일치하지 않습니다.");
-                } else {
-                    alert("비밀번호가 일치합니다.");
-                }
-            });
+        let verifyResult = targetArr[targetArr.length - 1].parentNode.querySelector('.verify_result');
+
+        if (!targetArr[0].value) return false;
+
+        console.log(targetArr)
+        let verifyTestResult = targetArr.every((field) => {
+            return field.value === targetArr[0].value;
         });
+
+        if (verifyTestResult) {
+            verifyResult && (verifyResult.textContent = '비밀번호가 일치합니다.');
+        } else {
+            verifyResult && (verifyResult.textContent = '비밀번호가 일치하지 않습니다.');
+        }
+        return verifyTestResult;
     }
+
+    // Set Regular Expressions
+    const regExps = {
+        INPUT: {
+            text: {
+                input_id: /^[a-zA-Z0-9`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]{6,32}$/,
+                input_name: /^[가-힣]{2,32}$/,
+                default: /^[a-zA-Z0-9`~!@#$%^&*()\-_=+\\|/.{}[\]'";:,?<>]+$/,
+            },
+            password: /(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?])[a-zA-Z0-9`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]{12,32}$/,
+            email: /^[a-zA-Z0-9%\-_+.]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/,
+            date: /^\d{4,6}\-?\d{1,2}\-?\d{1,2}$/,
+            number: /\d+/,
+            tel: /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/
+        },
+        TEXTAREA: /^[a-zA-Z0-9`~!@#$%^&*()\-_=+\\|/.{}[\]'";:,?<>\n\t]+$/
+    };
+
 
     // Reg Expression Checker
     function callRegExpChecker(target) {
@@ -79,26 +104,12 @@ addEventListener('DOMContentLoaded', () => {
         let regExp;
         if (target.tagName === 'INPUT') {
             if (target.type === 'text') {
-                if (target.name === 'input_id') {
-                    regExp = /^[a-zA-Z0-9`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]{6,32}$/;
-                } else if (target.name === 'input_name') {
-                    regExp = /^[가-힣]{2,32}$/;
-                } else {
-                    regExp = /^[a-zA-Z0-9`~!@#$%^&*()\-_=+\\|/.{}[\]'";:,?<>]+$/;
-                }
-            } else if (target.type === 'password') {
-                regExp = /(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?])[a-zA-Z0-9`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]{12,32}$/;
-            } else if (target.type === 'email') {
-                regExp = /^[a-zA-Z0-9%\-_+.]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
-            } else if (target.type === 'date') {
-                regExp = /^\d{4,6}\-?\d{1,2}\-?\d{1,2}$/;
-            } else if (target.type === 'number') {
-                regExp = /\d+/;
-            } else if (target.type === 'tel') {
-                regExp = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+                regExp = regExps[target.tagName][target.type][target.name] || regExps[target.tagName][target.type].default;
+            } else {
+                regExp = regExps[target.tagName][target.type];
             }
         } else if (target.tagName === 'TEXTAREA') {
-            regExp = /^[a-zA-Z0-9`~!@#$%^&*()\-_=+\\|/.{}[\]'";:,?<>\n\t]+$/;
+            regExp = regExps[target.tagName]
         }
 
         if (!regExp) {

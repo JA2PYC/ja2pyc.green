@@ -20,11 +20,98 @@
     <header include-html="/html/header.html"></header>
     <main>
         <div class="main_container">
+            <h1>JS JQuery</h1>
+            <hr>
             <div class="jquery">
-                <div><input type="text" class="result"></div>
+                <div><input type="text" class="result" disabled /></div>
+                <p class="target1">Target 1</p>
+                <p class="target2">Target 2</p>
             </div>
-            <p class="target1">Target 1</p>
-            <p class="target2">Target 2</p>
+            <hr>
+            <div class="quantity_counter">
+                <input type="text" class="result" value="1" disabled />
+                <button type="button" class="button_plus">+</button>
+                <button type="button" class="button_minus">-</button>
+            </div>
+            <hr>
+            <div class="hobby_selector">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="checkbox" name="hobby" id="hobby_soccer" class="hobby" value="soccer"><label
+                    for="hobby_soccer">Soccer</label>
+                <input type="checkbox" name="hobby" id="hobby_basketball" class="hobby" value="basketball"><label
+                    for="hobby_basketball">Basketball</label>
+                <input type="checkbox" name="hobby" id="hobby_baseball" class="hobby" value="baseball"><label
+                    for="hobby_baseball">Baseball</label>
+                <button type="button" class="button_hobby_checker">Check</button>
+            </div>
+            <hr>
+            <div class="text_limit">
+                <textarea name="textarea_limit" id="textarea_limit"></textarea>
+                <div><input type="text" class="result" disabled /></div>
+            </div>
+            <hr>
+            <div class="calc_sum">
+                <label for="price1">Price 1</label>
+                <input type="number" name="price1" id="price1" class="price" value="10000" />
+                <label for="price2">Price 2</label>
+                <input type="number" name="price2" id="price2" class="price" value="20000" />
+                <label for="quantity">Set Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="quantity" value="1" />
+                <label for="coupon">Coupon</label>
+                <input type="number" name="coupon" id="coupon" class="coupon" value="0.2" min="0" max="1" step="0.1" />
+                <input type="checkbox" name="fruit" id="check_apple" class="check" value="2000" />
+                <label for="check_apple">Apple (2000)</label>
+                <input type="checkbox" name="fruit" id="check_banana" class="check" value="3000" />
+                <label for="check_banana">Banana (3000)</label>
+                <button type="button" class="button_calc_total">Total Price</button>
+                <div><input type="text" class="result" disabled /></div>
+            </div>
+            <hr>
+            <div class="form_validation">
+                <form action="formSubmitter.jsp" method="post">
+                    <div>
+                        <label for="input_id">ID</label><span class="reg_result"></span>
+                        <input type="text" id="input_id">
+                    </div>
+                    <div>
+                        <label for="input_password">Password</label><span class="reg_result"></span>
+                        <input type="password" name="input_password" id="input_password" />
+                    </div>
+                    <div>
+                        <label for="input_password_verify">Password (Verify)</label><span
+                            class="reg_result"></span><span class="verify_result"></span>
+                        <input type="password" name="input_password_verify" id="input_password_verify" />
+                    </div>
+                    <div>
+                        <label for="input_name">Name</label><span class="reg_result"></span>
+                        <input type="text" name="input_name" id="input_name" />
+                    </div>
+                    <div>
+                        <label for="input_email">Email</label><span class="reg_result"></span>
+                        <input type="email" name="input_email" id="input_email" />
+                    </div>
+                    <div>
+                        <label for="input_date">Date</label><span class="reg_result"></span>
+                        <input type="date" name="input_date" id="input_date" />
+                    </div>
+                    <div>
+                        <label for="input_number">Number</label><span class="reg_result"></span>
+                        <input type="number" name="input_number" id="input_number" />
+                    </div>
+                    <div>
+                        <label for="input_tel">Tel</label><span class="reg_result"></span>
+                        <input type="tel" name="input_tel" id="input_tel">
+                    </div>
+                    <div>
+                        <label for="textarea_des">Description</label><span class="reg_result"></span>
+                        <textarea name="textArea_des" id="textarea_des"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="button_submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
         </div>
     </main>
     <footer include-html="/html/footer.html"></footer>
