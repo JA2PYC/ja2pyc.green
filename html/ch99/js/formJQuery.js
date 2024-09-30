@@ -49,7 +49,6 @@ $(document).ready(() => {
                 isvalidArr.push(callVerifyPassword($(passwordArr)));
             }
 
-            console.log(isvalidArr)
             // Check Validation Result
             let validResult = isvalidArr.every(Boolean);
 
