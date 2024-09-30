@@ -4,25 +4,78 @@ $(document).ready(() => {
     }
 
     function eventHandler() {
-        console.log(document.forms)
-
         let $documentForms = $(document.forms);
         // Set Input Checker
-        $documentForms.each((formIndex, form) => {
-            $(form).on('input', 'input:not(:disabled)', (inputEvent) => {
-                console.log($(inputEvent.target));
-            })
+        $documentForms.each((formIndex, formTarget) => {
+            $(formTarget).on('input', (inputEvent) => {
+                callRegExpChecker($(inputEvent.target))
+            });
+
+            let passwordArr = [];
+            let formElements = $(formTarget).prop('elements');
+            $(formElements).each((elementIndex, elementTarget) => {
+                if ($(elementTarget).attr('type') === 'password') {
+                    passwordArr.push(elementTarget);
+                }
+            });
+
+            if (passwordArr.length >= 2) {
+                $(passwordArr).on('input', (inputEvent) => {
+                    callVerifyPassword($(passwordArr));
+                })
+            }
+
         });
 
         // Set Form Submitter
-        $(document.forms).on('submit', (submitEvent) => {
+        $documentForms.on('submit', (submitEvent) => {
             submitEvent.preventDefault();
-            console.log('submit')
-            console.log(submitEvent)
-            $(submitEvent.target).find('input:not(:disabled)').each((inputIndex, inputTarget) => {
-                callRegExpChecker($(inputTarget));
-            });
+
+            // Set Elements
+            let formElements = $(submitEvent.target).prop('elements');
+
+            // Check Data Validation
+            let isvalidArr = [];
+            let passwordArr = [];
+            isvalidArr = $(formElements).map((elementIndex, elementTarget) => {
+                if ($(elementTarget).attr('type') === 'password') {
+                    passwordArr.push(elementTarget);
+                }
+                return callRegExpChecker($(elementTarget));
+            }).get();
+
+            // Check Password Validation
+            if (passwordArr.length >= 2) {
+                isvalidArr.push(callVerifyPassword($(passwordArr)));
+            }
+
+            // Check Validation Result
+            let validResult = isvalidArr.every(Boolean);
+
+            if (validResult) {
+                submitEvent.target.submit();
+            }
         })
+    }
+
+    function callVerifyPassword($targetArr) {
+        if (!$($targetArr[0]).val()) return false;
+
+        let verifyResult = $($targetArr[$targetArr.length - 1]).parent().find('.verify_result');
+
+        let verifyArr = $targetArr.map((passwordIndex, passwordField) => {
+            return passwordField.value === $($targetArr[0]).val();
+        }).get();
+
+        let verifyPasswordResult = verifyArr.every(Boolean);
+
+        if (verifyPasswordResult) {
+            verifyResult && ($(verifyResult).text('비밀번호가 일치합니다.'));
+        } else {
+            verifyResult && ($(verifyResult).text('비밀번호가 일치하지 않습니다.'));
+        }
+
+        return verifyPasswordResult;
     }
 
     // Set Regular Expressions
@@ -47,15 +100,37 @@ $(document).ready(() => {
         let $targetParent = $target.parent();
         let $regResult = $targetParent.find('.reg_result');
 
-        console.log($target);
-        console.log($target.val());
-        if (!$target.val()) {
-            $regResult && ($regResult.val('검증 대상이 없습니다.'));
+        if ($target.attr('type') === 'submit' && !$target.attr('name')) {
+            return true;
+        } else if (!$target.val()) {
+            $regResult && ($regResult.text('검증 대상이 없습니다.'));
             return false;
         }
 
         let regExp;
+        if ($target.prop('tagName') === 'INPUT') {
+            if ($target.attr('type') === 'text') {
+                regExp = regExps[$target.prop('tagName')][$target.attr('type')][$target.attr('name')] || regExps[$target.prop('tagName')][$target.attr('type')].default;
+            } else {
+                regExp = regExps[$target.prop('tagName')][$target.attr('type')];
+            }
+        } else if ($target.prop('tagName') === 'TEXTAREA') {
+            regExp = regExps[$target.prop('tagName')];
+        }
 
+        if (!regExp) {
+            $regResult && ($regResult.text('검증식을 불러오지 못했습니다.'));
+            return false;
+        }
+
+        let regExpResult = regExp.test($target.val());
+        if (regExpResult) {
+            $regResult && ($regResult.text('검증성공'));
+        } else {
+            $regResult && ($regResult.text('검증실패'));
+        }
+
+        return regExpResult;
     }
 
     initialize();
