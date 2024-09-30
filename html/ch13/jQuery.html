@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <!-- Set JQuery -->
+    <!-- <script src="/js/jquery-3.7.1.min.js"></script> -->
+    <!-- Set JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/jQuery.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS JQuery</h1>
+            <hr>
+            <div class="jquery">
+                <div><input type="text" class="result" disabled /></div>
+                <p class="target1">Target 1</p>
+                <p class="target2">Target 2</p>
+            </div>
+            <hr>
+            <div class="quantity_counter">
+                <input type="text" class="result" value="1" disabled />
+                <button type="button" class="button_plus">+</button>
+                <button type="button" class="button_minus">-</button>
+            </div>
+            <hr>
+            <div class="hobby_selector">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="checkbox" name="hobby" id="hobby_soccer" class="hobby" value="soccer"><label
+                    for="hobby_soccer">Soccer</label>
+                <input type="checkbox" name="hobby" id="hobby_basketball" class="hobby" value="basketball"><label
+                    for="hobby_basketball">Basketball</label>
+                <input type="checkbox" name="hobby" id="hobby_baseball" class="hobby" value="baseball"><label
+                    for="hobby_baseball">Baseball</label>
+                <button type="button" class="button_hobby_checker">Check</button>
+            </div>
+            <hr>
+            <div class="text_limit">
+                <textarea name="textarea_limit" id="textarea_limit"></textarea>
+                <div><input type="text" class="result" disabled /></div>
+            </div>
+            <hr>
+            <div class="calc_sum">
+                <label for="price1">Price 1</label>
+                <input type="number" name="price1" id="price1" class="price" value="10000" />
+                <label for="price2">Price 2</label>
+                <input type="number" name="price2" id="price2" class="price" value="20000" />
+                <label for="quantity">Set Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="quantity" value="1" />
+                <label for="coupon">Coupon</label>
+                <input type="number" name="coupon" id="coupon" class="coupon" value="0.2" min="0" max="1" step="0.1" />
+                <input type="checkbox" name="fruit" id="check_apple" class="check" value="2000" />
+                <label for="check_apple">Apple (2000)</label>
+                <input type="checkbox" name="fruit" id="check_banana" class="check" value="3000" />
+                <label for="check_banana">Banana (3000)</label>
+                <button type="button" class="button_calc_total">Total Price</button>
+                <div><input type="text" class="result" disabled /></div>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>
