@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form Submitter</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/formSubmitter.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Form Submitter</h1>
+            <hr>
+            <div class="form_container">
+                <form action="formSubmitter.jsp" method="post">
+                    <div>
+                        <label for="input_id">ID</label><span class="reg_result"></span>
+                        <input type="text" name="input_id" id="input_id" />
+                    </div>
+                    <div>
+                        <label for="input_password">Password</label><span class="reg_result"></span>
+                        <input type="password" name="input_password" id="input_password" />
+                    </div>
+                    <div>
+                        <label for="input_password_verify">Password (Verify)</label><span class="reg_result"></span><span class="verify_result"></span>
+                        <input type="password" name="input_password_verify" id="input_password_verify" />
+                    </div>
+                    <div>
+                        <label for="input_name">Name</label><span class="reg_result"></span>
+                        <input type="text" name="input_name" id="input_name" />
+                    </div>
+                    <div>
+                        <label for="input_email">Email</label><span class="reg_result"></span>
+                        <input type="email" name="input_email" id="input_email" />
+                    </div>
+                    <div>
+                        <label for="input_date">Date</label><span class="reg_result"></span>
+                        <input type="date" name="input_date" id="input_date" />
+                    </div>
+                    <div>
+                        <label for="input_number">Number</label><span class="reg_result"></span>
+                        <input type="number" name="input_number" id="input_number" />
+                    </div>
+                    <div>
+                        <label for="input_tel">Tel</label><span class="reg_result"></span>
+                        <input type="tel" name="input_tel" id="input_tel" />
+                    </div>
+                    <div>
+                        <label for="textarea_des">Description</label><span class="reg_result"></span>
+                        <textarea name="textarea_des" id="textarea_des"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>

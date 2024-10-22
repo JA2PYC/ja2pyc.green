@@ -1,0 +1,54 @@
+main {
+    position: relative;
+}
+
+.main_container {
+    position: relative;
+}
+
+/* Sticky */
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 3rem;
+    background-color: #ff000066;
+}
+
+/* Sticky Container */
+.sticky_container {
+    position: relative;
+}
+
+.sticky_container .container_sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 2rem;
+    color: #f0f0f0;
+    background-color: red;
+}
+
+/* Sticky Wordpress */
+.sticky_wordpress {
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky_wordpress .wordpress_header {
+    display: contents;
+}
+
+.sticky_wordpress .header_menu {
+    position: relative;
+    display: flex;
+    box-sizing: initial;
+    background-color: #00ff0066;
+}
+
+.sticky_wordpress .header_sticky {
+    position: sticky;
+    top: 0;
+    display: flex;
+    color: #f0f0f0;
+    background-color: navy;
+}

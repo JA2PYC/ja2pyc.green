@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Handling</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="./css/eventHandling.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/eventHandling.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Event Handling</h1>
+            <hr>
+            <div class="quantity_counter">
+                <input type="number" class="result" value="1" disabled />
+                <button type="button" class="button_plus">+</button>
+                <button type="button" class="button_minus">-</button>
+            </div>
+            <hr>
+            <div class="hobby_selector">
+                <div><input type="text" class="result" disabled /></div>
+                <input type="checkbox" name="hobby" id="hobby_soccer" class="hobby" value="soccer"><label
+                    for="hobby_soccer">Soccer</label>
+                <input type="checkbox" name="hobby" id="hobby_basketball" class="hobby" value="basketball"><label
+                    for="hobby_basketball">Basketball</label>
+                <input type="checkbox" name="hobby" id="hobby_baseball" class="hobby" value="baseball"><label
+                    for="hobby_baseball">Baseball</label>
+                <button type="button" class="button_hobbyChecker">Check</button>
+            </div>
+            <hr>
+            <div class="text_limit">
+                <textarea name="textarea_limit" id="textarea_limit"></textarea>
+                <div><input type="text" class="result" disabled /></div>
+            </div>
+            <hr>
+            <div class="calc_sum">
+                <label for="price1">Price 1</label>
+                <input type="number" name="price1" id="price1" class="price" value="10000" />
+                <label for="price2">Price 2</label>
+                <input type="number" name="price2" id="price2" class="price" value="20000" />
+                <label for="quantity">Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="quantity" value="1">
+                <label for="coupon">Coupon</label>
+                <input type="number" name="coupon" id="coupon" class="coupon" value="0.2" min="0" max="1" step="0.1" />
+                <label for="check_apple">Apple (2000)</label>
+                <input type="checkbox" name="fruit" id="check_apple" value="2000" class="check" />
+                <label for="check_banana">Banana (3000)</label>
+                <input type="checkbox" name="fruit" id="check_banana" value="3000" class="check">
+                <button type="button" class="button_calc_total">Total Price</button>
+                <div><input type="text" class="result" disabled /></div>
+            </div>
+            <hr>
+            <div class="login_validation">
+                <form action="" method="post">
+                    <div>
+                        <label for="input_id">ID</label>
+                        <input type="text" name="input_id" id="input_id" />
+                        <input type="text" class="result" disabled />
+                    </div>
+                    <div>
+                        <label for="input_password">Password</label>
+                        <input type="password" name="input_password" id="input_password" />
+                        <input type="text" class="result" disabled />
+                    </div>
+                    <button type="submit" class="button_submit_form">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>

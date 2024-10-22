@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Attributes</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/attributes.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Attributes</h1>
+            <hr>
+            <div class="att_innerHTML">
+                <div><p class="p_innerHTML">대체전 문구</p></div>
+                <input type="text" class="input_innerHTML" placeholder="innerHTML을 이용해 넣을 값"/>
+                <button type="button" class="button_innerHTML">innerHTML</button>
+            </div>
+            <hr>
+            <div class="att_src">
+                <div><img src="/images/sky-2546570_1280.jpg" alt="Result" class="result" /></div>
+                <button type="button" class="button_src">Src</button>
+            </div>
+            <hr>
+            <div class="att_style">
+                <div><p class="result">P Result</p></div>
+                <button type="button" class="button_style">Style</button>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Document Object Model</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="./css/documents.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/documents.js"></script>
+</head>
+
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS Document Object Model</h1>
+            <hr>
+            <div class="dom">
+                <p id="dom_id" class="dom_attribute class_name">P
+                    <span class="p_span">Span</span>
+                    <strong class="p_strong">Strong</strong>
+                    <b class="p_b">B</b>
+                </p>
+            </div>
+            <hr>
+            <div class="dom_children">
+                <div><textarea name="result_children" id="result_children" class="result"></textarea></div>
+                <div class="children1">Children 1</div>
+                <div class="children2">Children 2</div>
+                <div class="children3">Children 3</div>
+                <button type="button" class="button_children">Children</button>
+            </div>
+            <hr>
+            <div class="dom_classList">
+                <div><input type="text" id="result_classList" class="result" disabled /></div>
+                <div class="classlist class_name my_class sub_class">Class Name</div>
+                <button type="button" class="button_classList">ClassList</button>
+            </div>
+            <hr>
+            <div class="dom_child">
+                <div class="result">
+                    <p class="p_result">P Result</p>
+                </div>
+                <button type="button" class="button_appendChild">AppendChild</button>
+                <button type="button" class="button_removeChild">RemoveChild</button>
+            </div>
+            <hr>
+            <div class="table_insert">
+                <div>
+                    <table class="result">
+                        <tbody>
+                            <tr>
+                                <td>(1,1)</td>
+                                <td>(1,2)</td>
+                            </tr>
+                            <tr>
+                                <td>(2,1)</td>
+                                <td>(2,2)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="button_insertRow">insertRow</button>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+
+</html>

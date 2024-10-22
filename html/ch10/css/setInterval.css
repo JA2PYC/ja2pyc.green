@@ -1,0 +1,33 @@
+.traffic_light .result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    padding: 1rem;
+    border: 5px solid black;
+    border-radius: 30px;
+}
+
+.traffic_light .result div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+.traffic_light .light_green {
+    background-color: green;
+}
+
+.traffic_light .light_yellow {
+    background-color: yellow;
+}
+
+.traffic_light .light_red {
+    background-color: red;
+}
+
+.traffic_light .light_hidden {
+    background-color: transparent;
+}

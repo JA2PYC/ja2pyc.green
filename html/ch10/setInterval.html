@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS setInterval</title>
+    <link rel="stylesheet" href="/css/base_style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="./css/setInterval.css">
+    <script src="/js/include-html.js"></script>
+    <script src="./js/setInterval.js"></script>
+</head>
+<body>
+    <header include-html="/html/header.html"></header>
+    <main>
+        <div class="main_container">
+            <h1>JS setInterval</h1>
+            <hr>
+            <div class="current_time">
+                <div><input type="text" class="result" disabled /></div>
+                <button type="button" class="button_currentTime">Current Time</button>
+                <button type="button" class="button_currentTimeStop">Stop</button>
+            </div>
+            <hr>
+            <div class="traffic_light">
+                <div class="result">
+                    <div class="light_green"></div>
+                    <div class="light_yellow"></div>
+                    <div class="light_red"></div>
+                </div>
+                <button type="button" class="button_startSignal">Start</button>
+                <button type="button" class="button_stopSignal">Stop</button>
+            </div>
+            <hr>
+            <div class="follow_cursor">
+                <div><img src="/images/sky-2546570_1280.jpg" alt="sky-2546570_1280" title="sky-2546570_1280" class="result follow_target"></div>
+                <button type="button" class="button_followCursor">Follow</button>
+                <button type="button" class="button_unfollowCursor">Unfollow</button>
+            </div>
+            <hr>
+        </div>
+    </main>
+    <footer include-html="/html/footer.html"></footer>
+</body>
+</html>
