@@ -70,3 +70,35 @@
         translate: 0px 0px;
     }
 }
+
+.animation_container {
+    animation: containerRotation 3s ease-in-out infinite;
+}
+
+@keyframes containerRotation {
+    0% {
+        transform: rotate3d(0, 0, 0, 0deg);
+    }
+
+    50% {
+        transform: rotate3d(10, 20, 30, 10deg)
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 0, 0deg);
+    }
+}
+
+.animation_container>div.box {
+    animation: rotate360 3s linear infinite;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
