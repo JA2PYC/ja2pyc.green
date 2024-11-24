@@ -22,7 +22,7 @@ $(document).ready(() => {
             guessAnswer = (Math.floor(Math.random() * 100)) + 1;
         }
         let $numberInput = $targetParent.find('input.number_input');
-        let $result = $targetParent.find('input.result');
+        let $result = $targetParent.find('div.result');
         console.log($numberInput.val());
         console.log(guessAnswer);
         if ($numberInput.val()) {
@@ -33,7 +33,8 @@ $(document).ready(() => {
                 if (userInput < guessAnswer) throw "Up!!";
                 if (userInput == guessAnswer) throw "정답!!";
             } catch (error) {
-                $result.val('Error: ' + error);
+                $result.text('Message : ' + $numberInput.val() + " " + error);
+
             }
         } else {
             $result.val('Error : Empty Input Number');
